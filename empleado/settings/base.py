@@ -15,14 +15,16 @@ SECRET_KEY = 'django-insecure-vuv_o^flcs9ke8_xc@a+f@fpcl!c((nws4kk8qg+l#p8+=5rwc
 
 
 # Application definition
-
+ # aqui consideramos las aplicaciones
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',   
+    'applications.departamento',
+    'applications.personas'
 ]
 
 MIDDLEWARE = [
@@ -59,13 +61,6 @@ WSGI_APPLICATION = 'empleado.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -100,7 +95,3 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-  

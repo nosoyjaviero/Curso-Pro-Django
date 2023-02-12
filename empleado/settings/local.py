@@ -1,4 +1,5 @@
 from .base import *
+from django.apps import AppConfig
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
