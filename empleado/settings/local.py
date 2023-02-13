@@ -2,7 +2,9 @@ from .base import *
 from django.apps import AppConfig
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+# BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
@@ -13,10 +15,15 @@ ALLOWED_HOSTS = []
 
 
 
+# DB_FILE = BASE_DIR.child('db.sqlite3')
+# DB_FILE =os.path.join(BASE_DIR, 'db.sqlite3')
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        #aplicamos este comentario por que nos da complictos con la ruta (solucionar)
+        # 'NAME': DB_FILE / 'db.sqlite3',
     }
 }
 

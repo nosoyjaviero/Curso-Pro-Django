@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-# Creamos la lista llamando al archivo html
+# Creamos la vista llamando al archivo html
 class PruebaView(TemplateView):
-    template_name='prueba.html'
+    #indicamos la nueva ruta ./templates.home/prueba.html
+    template_name='home/prueba.html'
