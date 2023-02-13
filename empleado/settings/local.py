@@ -15,7 +15,7 @@ ALLOWED_HOSTS = []
 
 
 
-# DB_FILE = BASE_DIR.child('db.sqlite3')
+DB_FILE = BASE_DIR.child('db.sqlite3')
 # DB_FILE =os.path.join(BASE_DIR, 'db.sqlite3')
 
 
@@ -24,6 +24,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         #aplicamos este comentario por que nos da complictos con la ruta (solucionar)
         # 'NAME': DB_FILE / 'db.sqlite3',
+        'NAME': DB_FILE ,
     }
 }
 
