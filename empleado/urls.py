@@ -24,5 +24,7 @@ urlpatterns = [
     #vinculamos el archivo principal de urls con cada una de las aplicaciones que creamos
     # re_path('', include("applications.departamentos.urls")),
     re_path('', include("applications.personas.urls")),
+    re_path('', include("applications.departamento.urls")),
+    re_path('', include("applications.home.urls")),
     
 ]
