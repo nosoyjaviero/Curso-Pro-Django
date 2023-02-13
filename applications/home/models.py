@@ -12,7 +12,7 @@ class Prueba(models.Model):
    #mi 
     cantidad = models.IntegerField()
     def __str__ (self):
-        return self.titulo
+        return self.titulo + '-' + self.subtitulo
     
     #py manage.py makemigrations
     #py manage.py migrate

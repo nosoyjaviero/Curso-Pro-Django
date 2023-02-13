@@ -1,9 +1,16 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import (
+    TemplateView, ListView, 
+     #añadimos CreateView 
+    CreateView)
 
 # Create your views here.
 
+#importar mis modelos
+from .models import Prueba
+
 # Creamos la vista llamando al archivo html
+
 class PruebaView(TemplateView):
     #indicamos la nueva ruta ./templates.home/prueba.html
     template_name='home/prueba.html'
@@ -28,6 +35,24 @@ class PruebaListView(ListView):
         # return render(request,archivo ,{nombreVAR: diccionario})
         # return render(request, template_name ,{'listaNumeros':queryset})
     
+class Lista_Prueba(ListView):
+        # poner siempre como primera variable "TEMPLATE_NAME"
+        template_name = "home/lista_prueba.html"
+        #LLamamos al model        
+        model = Prueba
+        #variable a  para llamar en el archivo pero solo en el caso de listview
+        context_object_name= 'lista'
+        
+ 
+#Usamos CreateView
+class PruebaCreateView(CreateView):
+    template_name = "home/add.html"
+    model = Prueba
+    #debemos agregar esto simo nos marca un error
+    fields=['titulo','subtitulo','cantidad']
+     
         
         
+    
+         
     

@@ -1,0 +1,9 @@
+{% comment %} {{lista}} {% endcomment %}
+
+<h1>Lista de Prueba de ListView</h1>
+{% for elemento in lista %}
+{% comment %} accedo a las variables del modelo {% endcomment %}
+<p>elemnto {{elemento}} </p>
+<p>elemento.subtitulo  {{elemento.subtitulo}}</p>
+<p>elemento.cantidad {{elemento.cantidad}}</p>
+{% endfor %}
