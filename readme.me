@@ -14,3 +14,29 @@ CreateView Sirve para registrar datos sin utilizar el administrador django
 
 025 Blog-sobre-Tipos-de-Campos
 https://neunapp.com/programacion-web-con-django/tipos-de-campos-de-un-modelo-en-django-fields-in-models-33026/
+
+
+EJECUTAMOS  SQLSHELL 
+Server [localhost]: DEJAR VACIO 
+Database [postgres]:DEJAR VACIO 
+Port [5432]: DEJAR VACIO 
+Username [postgres]: DEJAR VACIO 
+Password for user postgres: 123
+psql (15.1)
+WARNING: Console code page (850) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# CREATE DATABASE dbempleado;
+CREATE DATABASE
+postgres=# CREATE USER neunapp;
+CREATE ROLE
+postgres=# \C dbempleado;
+Title is "dbempleado".
+postgres=# \c dbempleado;
+You are now connected to database "dbempleado" as user "postgres".
+dbempleado=# ALTER ROLE neunapp WITH PASSWORD '123'
+dbempleado-# ;
+ALTER ROLE
+dbempleado=#
