@@ -27,7 +27,7 @@ DATABASES = {
     #     'NAME': DB_FILE ,
     # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
         'NAME':'dbempleado',
         'USER':'neunapp',
         'PASSWORD':'123',
