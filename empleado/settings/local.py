@@ -20,12 +20,21 @@ DB_FILE = BASE_DIR.child('db.sqlite3')
 
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     #aplicamos este comentario por que nos da complictos con la ruta (solucionar)
+    #     # 'NAME': DB_FILE / 'db.sqlite3',
+    #     'NAME': DB_FILE ,
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        #aplicamos este comentario por que nos da complictos con la ruta (solucionar)
-        # 'NAME': DB_FILE / 'db.sqlite3',
-        'NAME': DB_FILE ,
+        'ENGINE':'django.backend.postgresql_psycopg2',
+        'NAME':'dbempleado',
+        'USER':'neunapp',
+        'PASSWORD':'123',
+        'HOST':'localhost',
+        'PORT':'5432',        
     }
+    
 }
 
 
