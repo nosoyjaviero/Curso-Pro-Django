@@ -66,3 +66,9 @@ Type "help" for help.
 postgres=# \c dbempleado;
 You are now connected to database "dbempleado" as user "postgres".
 dbempleado=# GRANT postgres TO neunapp;
+
+ahora no podemos acceder a 127.0.0.1/admin por que al cambiamos de gestor de base de datos
+
+entonces debemos ejecutar
+py manage.py createsuperuser
+y crear el super usuario
