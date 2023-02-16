@@ -28,4 +28,4 @@ class Departamento(models.Model):
     
     def __str__(self):
         
-        return str(self.id) +' - '+ self.name +' - '+  self.short_name
+        return str(self.id) +' - '+ self.name

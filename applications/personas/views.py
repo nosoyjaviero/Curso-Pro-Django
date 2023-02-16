@@ -19,6 +19,7 @@ from .models import Empleado
 #creamos la clase correspondiente
 #le indicamos que tipo de lista generica estaremos trabajando
 
+
 class ListAllEmpleados(ListView):
     #debemos decirle de primero que template vamos a trabajar
     template_name= 'personas/list_all.html'
@@ -27,8 +28,19 @@ class ListAllEmpleados(ListView):
     
     context_object_name='lista'
 
-# 2-Listar todos los empleados que pertenecen a un area ed la empresa
+# 2-Listar todos los empleados que pertenecen a un area en la empresa
+
+#El proposito de esta clase es devolver empleados segun el area especificada
+class ListByAreaEmployes(ListView):
+    """ Lista de empleado de un area"""
+    template_name= 'personas/list_area.html'
+    
+    
+    # Realizamos la consulta y se la asignamos la asignamos al objects_list para ser accedida en el archivo html
+    queryset= Empleado.objects.filter(departamento_fk__short_name='contabilidad')
+    
+  
+    
 # 3- listar empleados por trabajo
 # 4- listar los empleados por palabra clave
 # 5- listar habilidades de un empleado
-

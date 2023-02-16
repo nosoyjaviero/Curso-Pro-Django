@@ -8,5 +8,6 @@ from . import views
 urlpatterns = [
     # mandar a llamar al archivo vistas
     path('listar-todo-empleados/', views.ListAllEmpleados.as_view()),
-    
+    #anadimos la url
+    path('lista-by-area', views.ListByAreaEmployes.as_view())
 ]
