@@ -2,4 +2,9 @@
 podemos acceder de esta manera
 
 {% comment %} {{lista}} {% endcomment %}
-{{object_list}}
+{% comment %} {{object_list}} {% endcomment %}
+{% for e in object_list %}
+<ul>
+    <li>{{e}}</li>
+</ul>
+{% endfor %}
