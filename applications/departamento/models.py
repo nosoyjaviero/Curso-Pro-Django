@@ -22,7 +22,9 @@ class Departamento(models.Model):
         #como aparecera el ordanamito por columna
         ordering=['name']
         #esta linea evita que  entre estas dos variables sean iguales
-        unique_together=('name','shor_name')
+        
+        #comentado por que nos dana error en la consola
+        # unique_together=('name','shor_name')
     
     def __str__(self):
         

@@ -76,3 +76,12 @@ y crear el super usuario
 Administrador de django sirve la nueva tendencia de desarrollar
 Backend, que es tener piezas de CRUD  mas sencillas y rapidas de implementar.entonces la tendencia es en desarrollo agil y corto tiempo
 
+Luego de crear class Habilidades en los models ejecutamos 
+makemigrations y luego migrate 
+ 
+ Luego vinculamos a habilidades con Empleado con una relacion de muchos a muchos
+
+ models.ManyToManyField(Habilidades)
+
+Otra vez  ejecutamos 
+makemigrations y luego migrate  por alterar los modelos y ejecute el codigo sql
