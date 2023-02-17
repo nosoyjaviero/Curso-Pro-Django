@@ -72,7 +72,14 @@ class ListEmployeeByKword(ListView):
         #get('kword','') especificamente por esto
         palabra_clave= self.request.GET.get('kword','')
         #imprimimos la palabra buscada en la terminal
-        print('-----',palabra_clave)
+        # ya no hacemos la impresion en terminal 
+        
+        
+        # el return de este resultado lo obtendra el html como respuesta atraves de context_object_name='empleado'
+        lista= Empleado.objects.filter(
+            firts_name=palabra_clave)
+        return lista
+        
         
         
        

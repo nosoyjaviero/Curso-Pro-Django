@@ -9,3 +9,9 @@
     <button type="submit">Buscar</button> {% comment %} este metodo activar al metodo get   envia el request a django{% endcomment %}
     
 </form>
+{% comment %} imprimimos el resultado {% endcomment %}
+{% for e in empleado %}
+<ul>
+    <li>{{e}}</li>
+</ul>
+{% endfor %}
