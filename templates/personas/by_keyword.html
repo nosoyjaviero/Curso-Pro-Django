@@ -1,0 +1,11 @@
+<h1>Buscar Empleados por palabra clave</h1>
+<form method="get"> {% csrf_token %}
+
+    {% comment %} atraves de name="kword" enviaremos el dato de consulta para que el backend recoga el request solicitado y asi obtener esta variable para realizar la operacion deseada, en este caso queremos buscar un empleado cuyo nombre sea el digitado en el input=text
+    aparece en la url cuando le damos enviar como "kword='Consulta'" {% endcomment %}
+
+    <input type="text" name="kword" id="kword" placeholder="Ingrese nombre aqui">
+
+    <button type="submit">Buscar</button> {% comment %} este metodo activar al metodo get   envia el request a django{% endcomment %}
+    
+</form>

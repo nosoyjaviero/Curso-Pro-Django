@@ -51,6 +51,31 @@ class ListByAreaEmployes(ListView):
             departamento_fk__short_name=area)
         return lista
     
+    
 # 3- listar empleados por trabajo
 # 4- listar los empleados por palabra clave
+
+class ListEmployeeByKword(ListView):
+    #creamos el html en el sucederan los eventos
+    
+    template_name= 'personas/by_keyword.html'
+    # debemos indicarle con cual modelo vamos a trabajar 
+    #la variable a la que accede el codigo html-django 
+    context_object_name='empleado'
+    
+    def get_queryset(self):
+        print ('****************')
+        #cuando se da el boton de buscar, el servidor recive atraves de una solicitud request, EN esta solicitud viene incluida una variable llamada kword a esta la obtenemos por aca de esta manera
+        # self nos llamamos a si mismos
+        #request Llamamos a la solicitud request 
+        #Get le indicamos atraves de cual metodo
+        #get('kword','') especificamente por esto
+        palabra_clave= self.request.GET.get('kword','')
+        #imprimimos la palabra buscada en la terminal
+        print('-----',palabra_clave)
+        
+       
+    
+    
+
 # 5- listar habilidades de un empleado
