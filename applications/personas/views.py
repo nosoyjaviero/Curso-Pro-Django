@@ -24,7 +24,15 @@ class ListAllEmpleados(ListView):
     #debemos decirle de primero que template vamos a trabajar
     template_name= 'personas/list_all.html'
     # debemos indicarle con cual modelo vamos a trabajar 
+    
+    #digitamos esto, entonces si vamos a la url de este metodo, notaremos que solo mostrara 4 resultados pero si digitamos esto en el navegador
+    # http://127.0.0.1:8000/listar-todo-empleados/?page=2    
+    #notaremos que nos mostrara nuevo resultados
+    paginate_by=4
+    #tambien podemos ordenarlos en este caso lo hare por nombre pero tambien se puede por otra
+    ordering='firts_name'
     model= Empleado
+    
     
     context_object_name='lista'
 
