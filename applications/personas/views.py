@@ -74,6 +74,7 @@ class ListEmployeeByKword(ListView):
         #imprimimos la palabra buscada en la terminal
         print('-----',palabra_clave)
         
+        
        
     
     
