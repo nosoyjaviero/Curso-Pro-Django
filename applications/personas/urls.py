@@ -9,5 +9,7 @@ urlpatterns = [
     # mandar a llamar al archivo vistas
     path('listar-todo-empleados/', views.ListAllEmpleados.as_view()),
     #anadimos la url
-    path('lista-by-area', views.ListByAreaEmployes.as_view())
+    
+    #si declaro esta variable <shortname>, puedo capturarla dentro de esta funcion con kwarg(')
+    path('lista-by-area/<shortname>/', views.ListByAreaEmployes.as_view())
 ]

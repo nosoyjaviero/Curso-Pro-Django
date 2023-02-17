@@ -42,7 +42,13 @@ class ListByAreaEmployes(ListView):
     #de una forma mas profesional aprendemos hacemos lo mismo pero de una manera mas profesional 
     
     def get_queryset(self):
-        lista= Empleado.objects.filter(departamento_fk__short_name='Economia')
+        
+        #Podemos capturar una variable que venga en una url atraves del siguiente paramento           
+        area= self.kwargs['shortname']
+        #luego se lo asignamos a departamento_fk__short_name (Ojo solo funciona si le pasamos el paramentro)
+        
+        lista= Empleado.objects.filter(
+            departamento_fk__short_name=area)
         return lista
     
 # 3- listar empleados por trabajo
