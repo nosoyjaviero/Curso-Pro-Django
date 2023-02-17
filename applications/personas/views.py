@@ -88,6 +88,27 @@ class ListEmployeeByKword(ListView):
             firts_name=palabra_clave)
         return lista
         
+#estaremos trabajando con una relacion de ManyToMany 
+class ListaHabilidadesEmpleado(ListView):
+    #declarar el template con el vamos a trabajar
+    template_name= 'personas/habilidades.html'
+    #para ser leido en el html
+    context_object_name= 'habilidades'
+    
+    
+    def get_queryset(self):
+        # django nos dice que este metodo nos sirve par devolver todas las hibilidades pero solo de una persona
+        empleado= Empleado.objects.get(id=4)
+        
+        #seleccionamos el numero de empledo por el id 
+        #accedemos a su variable Habilidad que es ManytoMany
+        #y le pedimos que se traiga todo y lo guarde e una variable
+        Lista_habilidades= empleado.habilidad.all()
+        #lo retornamos y lo pintamos en el html 
+        return Lista_habilidades
+    
+
+    
         
         
        

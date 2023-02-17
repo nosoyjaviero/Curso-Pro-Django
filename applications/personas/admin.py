@@ -8,6 +8,10 @@ admin.site.register(Habilidades)
 class EmpleadoAdmin(admin.ModelAdmin):
     list_display=(
         #solo puedo llamar a los atributos que existen en mi modelo
+        
+        #añadimos esta linea tambien para ver su atributo id en la tabla
+               
+        'id',
         'firts_name',
         'last_name',
         'departamento_fk',

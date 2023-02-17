@@ -14,6 +14,11 @@ urlpatterns = [
     path('lista-by-area/<shortname>/', views.ListByAreaEmployes.as_view()),
     
     #especificamos como se llama la url para realizar 
-    path('buscar-empleado/', views.ListEmployeeByKword.as_view())
+    path('buscar-empleado/', views.ListEmployeeByKword.as_view()),
+    
+    #añadimos la url
+    path('lista-habilidades/', views.ListaHabilidadesEmpleado.as_view())
+    
+    
     
 ]
