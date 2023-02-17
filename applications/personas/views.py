@@ -37,9 +37,13 @@ class ListByAreaEmployes(ListView):
     
     
     # Realizamos la consulta y se la asignamos la asignamos al objects_list para ser accedida en el archivo html
-    queryset= Empleado.objects.filter(departamento_fk__short_name='contabilidad')
+    queryset= Empleado.objects.filter(departamento_fk__short_name='Economia')
     
-  
+    #de una forma mas profesional aprendemos hacemos lo mismo pero de una manera mas profesional 
+    
+    def get_queryset(self):
+        lista= Empleado.objects.filter(departamento_fk__short_name='Economia')
+        return lista
     
 # 3- listar empleados por trabajo
 # 4- listar los empleados por palabra clave

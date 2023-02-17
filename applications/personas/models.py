@@ -19,8 +19,7 @@ class Habilidades(models.Model):
 class Empleado(models.Model):
     """Modelo para la tabla empleado
 
-    Args:
-        models (_type_): _description_
+    
     """
     
     JOB_CHOISES= {('1','Contador',),
