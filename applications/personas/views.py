@@ -97,20 +97,28 @@ class ListaHabilidadesEmpleado(ListView):
     
     
     def get_queryset(self):
+        
         #traemos la palabra guardada en el input text cuyo name es kword y esta es enviada por request
         palabra_clave= self.request.GET.get('kword','')
-        #la convertimos en int por que id trabaja solo con entero
-        palabra_clave=int(palabra_clave)
-        # django nos dice que este metodo nos sirve par devolver todas las hibilidades pero solo de una persona
+        #la convertimos en int por que id trabaja solo con
+        print(f'Palabra Clave {palabra_clave}')
         
-        empleado= Empleado.objects.get(id=palabra_clave)
+        # django nos dice que este metodo nos sirve par devolver todas las hibilidades pero solo de una persona
+        try:
+          palabra_clave=int(palabra_clave)
+          empleado= Empleado.objects.get(id=palabra_clave)
+          Lista_habilidades= empleado.habilidad.all()
+          return Lista_habilidades
+        except:
+          return []
+        
         
         #seleccionamos el numero de empledo por el id 
         #accedemos a su variable Habilidad que es ManytoMany
         #y le pedimos que se traiga todo y lo guarde e una variable
-        Lista_habilidades= empleado.habilidad.all()
+        
         #lo retornamos y lo pintamos en el html 
-        return Lista_habilidades
+        
     
 
     
