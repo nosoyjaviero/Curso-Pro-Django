@@ -29,6 +29,10 @@ class Empleado(models.Model):
     
     firts_name = models.CharField('Nombres', max_length=50)
     last_name = models.CharField('Apellidos', max_length=50)
+    #surge la Necesidad de crear una nueva tabla
+    full_name =models.CharField('', max_length=120, 
+                                blank=True, 
+                                 )
     job = models.CharField('Trabajo', max_length=50,choices=JOB_CHOISES)
     departamento_fk = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='empleado', blank=True ,null=True )

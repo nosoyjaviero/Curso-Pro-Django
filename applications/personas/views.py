@@ -142,7 +142,18 @@ class EmpleadoCreateView(CreateView):
     #es necesario añadir el siguiente campo para esta vista y este lo asiciamos con los nombres de los campos de del modelo
     # fields=['firts_name','last_name','job','departamento_fk']
     #con esto podemos traernos todos los campos del modelo sin escribir lo de arriba
-    fields=('__all__')
+    # fields=('__all__')
+    
+    #Modificamos los campos que se mostraran en el form manuelmente a como los seleccionaremos de models
+    
+    fields=['firts_name',
+            'last_name',
+            'job',
+            'departamento_fk',
+            'avatar',
+            'habilidad'
+            ]
+    
     
     # 4.
     # EN EL METODO POST, Si utilizamos el la vista CreateView es importante indicar cual sera la paginaredirect 
