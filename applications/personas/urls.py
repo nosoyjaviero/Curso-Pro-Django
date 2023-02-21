@@ -25,7 +25,7 @@ urlpatterns = [
     
     #añadimos la url
     path('add-empleado/', views.EmpleadoCreateView.as_view()),
-   
+    path('success/', views.EmpleadoSucessView.as_view()),
     
     
 ]

@@ -13,7 +13,8 @@ from django.shortcuts import render
 from django.views.generic import (
     ListView,
     DetailView,
-    CreateView
+    CreateView,
+    TemplateView
     )
 # importamos el modelo con el que trabajaremos
 from .models import Empleado
@@ -144,11 +145,20 @@ class EmpleadoCreateView(CreateView):
     
     # 4.
     # EN EL METODO POST, Si utilizamos el la vista CreateView es importante indicar cual sera la paginaredirect 
- 
+    # success_url= '.'
     
-    success_url= '.'
+    # para redirigir podemos accediendo a la url, pero es una mala practica
+    
+    success_url= '/success'
     
 
+#es la vista mas generica y solo se hace para hacer transicion de una pagina a otra
+class EmpleadoSucessView(TemplateView):
+    template_name = "personas/persona.html"
+
+        
+       
+    
     
 
 # 5- listar habilidades de un empleado
