@@ -28,7 +28,12 @@ urlpatterns = [
     #añadimos la url
     path('add-empleado/', views.EmpleadoCreateView.as_view()),
     #aÑadimos name para poder ser accedidela desde las vistas
+    
     path('success/', views.EmpleadoSucessView.as_view(), name='success'),
+    
+    
+    #añadimos la url se necesita acceder a uno en especifico por eso el pk 
+    path('update-empleado/<pk>', views.EmpleadoUpdateView.as_view(), name='update'),
     
     
 ]

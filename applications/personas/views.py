@@ -15,7 +15,8 @@ from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
-    TemplateView
+    TemplateView,
+    UpdateView
     )
 # importamos el modelo con el que trabajaremos
 from .models import Empleado
@@ -184,6 +185,12 @@ class EmpleadoSucessView(TemplateView):
     template_name = "personas/persona.html"
 
         
+
+class EmpleadoUpdateView(UpdateView):
+    template_name = "persona/update.html"
+    model = Empleado
+    
+    
        
     
     
