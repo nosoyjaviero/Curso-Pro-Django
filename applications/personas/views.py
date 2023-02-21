@@ -187,10 +187,27 @@ class EmpleadoSucessView(TemplateView):
         
 
 class EmpleadoUpdateView(UpdateView):
-    template_name = "persona/update.html"
+    template_name = "personas/update.html"
     model = Empleado
     
     
+    #Le indicamos los campos que se mostraran en el form manuelmente y como los seleccionaremos de models
+       
+    #Puede ser este para traer todos los campos
+    # fields=('__all__')
+    
+    #o este en especifico
+    fields=['firts_name',
+            'last_name',
+            'job',
+            'departamento_fk',
+            'avatar',
+            'habilidad'
+            ]
+    #es necesario redireccionar o saltara un error
+    success_url= reverse_lazy('persona_app:success')
+    
+   
        
     
     
