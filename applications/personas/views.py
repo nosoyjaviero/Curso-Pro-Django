@@ -167,6 +167,8 @@ class EmpleadoCreateView(CreateView):
     #nombreDelAPP_name:url name especifica
     success_url= reverse_lazy('persona_app:success')
     
+    
+    #form_valid lo que hace es validar los datos del html y luego se ejecuta 
     def form_valid(self, form):
         
         # aqui guardamos los valores del html 
@@ -207,9 +209,35 @@ class EmpleadoUpdateView(UpdateView):
     #es necesario redireccionar o saltara un error
     success_url= reverse_lazy('persona_app:success')
     
+    
+    
    
+    #form_valid lo que hace es validar los datos del form del html y luego se ejecuta 
+    def form_valid(self, form):     
        
+             
+        empleado=form.save(commit=False)
+        print('**********METHOD POST**************')
+        print('======================')
+        empleado.full_name= f'{empleado.firts_name} {empleado.last_name}'
+       
+        empleado.save()
+        
+        
+        return super(EmpleadoCreateView ,self ).form_valid(form)    
     
-    
+    # puede que nosotros necesitemos intersectar los datos antes de que hayamos validado los datos del formulario, y este en caso usamos post :
+    def post(self, request, *args, **kwargs):
+        #especificado en la documentacion de django
+        self.object= self.get_object()
+        
+        print('**********METHOD POST**************')
+        print('======================')
+        # observemos que datos tiene el argumento request
+        print(request.POST)
+        #request.POST al ser un diccionario podemos acceder aa cada posicion        
+        print(request.POST['last_name'])
+        #especificado en la documentacion de django
+        return super().post(request, *args, **kwargs)
 
 # 5- listar habilidades de un empleado
