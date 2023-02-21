@@ -4,6 +4,8 @@ from django.urls import path
 #a;adimos las url que utilizaremos
 #siempre debemos llamar a nuestras vistas
 from . import views 
+#declaramos el nombre de nuestro app_name par acceder a nuestro names
+app_name= 'persona_app'
 
 urlpatterns = [
     # mandar a llamar al archivo vistas
@@ -25,7 +27,8 @@ urlpatterns = [
     
     #añadimos la url
     path('add-empleado/', views.EmpleadoCreateView.as_view()),
-    path('success/', views.EmpleadoSucessView.as_view()),
+    #aÑadimos name para poder ser accedidela desde las vistas
+    path('success/', views.EmpleadoSucessView.as_view(), name='success'),
     
     
 ]

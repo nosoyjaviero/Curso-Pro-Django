@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -149,7 +150,10 @@ class EmpleadoCreateView(CreateView):
     
     # para redirigir podemos accediendo a la url, pero es una mala practica
     
-    success_url= '/success'
+    #una buena practica de lo anterior mencionado es utilizar lo siguiente
+    #en los parametros le indicamos la etiqueta name de un url
+    #nombreDelAPP_name:url name especifica
+    success_url= reverse_lazy('persona_app:success')
     
 
 #es la vista mas generica y solo se hace para hacer transicion de una pagina a otra
