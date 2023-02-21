@@ -8,6 +8,8 @@ from django.views.generic import (
 
 #importar mis modelos
 from .models import Prueba
+#lo importamos
+from .Forms import PruebaForm
 
 # Creamos la vista llamando al archivo html
 
@@ -49,7 +51,11 @@ class PruebaCreateView(CreateView):
     template_name = "home/add.html"
     model = Prueba
     #debemos agregar esto simo nos marca un error
-    fields=['titulo','subtitulo','cantidad']
+    
+    # cambiamos esto 
+    # fields=['titulo','subtitulo','cantidad']
+    # por esto
+    form_class=PruebaForm
     
     success_url='/'
      
