@@ -128,4 +128,11 @@ https://ccbv.co.uk/projects/Django/4.1/django.views.generic.edit/DeleteView/
 Reto de analizar def delete(self, request, *args, **kwargs):
 Sin conclusion por que no imprime
 
-# Para editar el css de un formulario con debemos crear un archivo form.py dentro de su respectiva app
+# Para editar  un formulario con debemos crear un archivo form.py dentro de su respectiva app
+
+declara los metodos a validar del form
+los llama en la vista
+si ocurre un error previsto indica un mensaje
+en este caso si digito algo menor a 10 saltara un error
+
+Lo interesante es que no guarda nada en la db si no pasa la validacion del form

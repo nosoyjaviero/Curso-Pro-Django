@@ -1,7 +1,7 @@
 <h1>Prueba de add</h1>
 {% comment %} llamamos al formulario  {% endcomment %}
 
-<form action="" method="post">
+<form action="" method="post"> {% csrf_token %}
     {{form.as_p}}
     <button type="submit">Enviar</button>
 
