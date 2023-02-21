@@ -3,7 +3,7 @@ from django.urls import path
 
 #a;adimos las url que utilizaremos
 #siempre debemos llamar a nuestras vistas
-from . import views
+from . import views 
 
 urlpatterns = [
     # mandar a llamar al archivo vistas
@@ -17,8 +17,11 @@ urlpatterns = [
     path('buscar-empleado/', views.ListEmployeeByKword.as_view()),
     
     #añadimos la url
-    path('lista-habilidades/', views.ListaHabilidadesEmpleado.as_view())
+    path('lista-habilidades/', views.ListaHabilidadesEmpleado.as_view()),
     
-    
+    #añadimos la url
+    # <pk> django recoge la variable pk automaticamente
+    path('listaDetalle/<pk>', views.ListaEmployeeDetailView.as_view())
     
 ]
+    

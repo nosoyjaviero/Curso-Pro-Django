@@ -12,7 +12,8 @@ from django.shortcuts import render
 #-Lista todos los empleados de la empresa
 #importamos ListView
 from django.views.generic import (
-    ListView
+    ListView,
+    DetailView
     )
 # importamos el modelo con el que trabajaremos
 from .models import Empleado
@@ -119,6 +120,11 @@ class ListaHabilidadesEmpleado(ListView):
         
         #lo retornamos y lo pintamos en el html 
         
+
+class ListaEmployeeDetailView(DetailView):
+    
+    template_name = "personas/detail_empleado.html"
+    model = Empleado
     
 
     
