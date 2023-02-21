@@ -50,6 +50,8 @@ class PruebaCreateView(CreateView):
     model = Prueba
     #debemos agregar esto simo nos marca un error
     fields=['titulo','subtitulo','cantidad']
+    
+    success_url='/'
      
         
         

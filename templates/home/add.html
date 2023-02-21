@@ -1,3 +1,9 @@
 <h1>Prueba de add</h1>
 {% comment %} llamamos al formulario  {% endcomment %}
-{{form}}
+
+<form action="" method="post">
+    {{form.as_p}}
+    <button type="submit">Enviar</button>
+
+
+</form>
