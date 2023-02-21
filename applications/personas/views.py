@@ -16,7 +16,8 @@ from django.views.generic import (
     DetailView,
     CreateView,
     TemplateView,
-    UpdateView
+    UpdateView, 
+    DeleteView
     )
 # importamos el modelo con el que trabajaremos
 from .models import Empleado
@@ -239,5 +240,16 @@ class EmpleadoUpdateView(UpdateView):
         print(request.POST['last_name'])
         #especificado en la documentacion de django
         return super().post(request, *args, **kwargs)
+    
+
+class EmpleadoDeleteView(DeleteView):
+    model = Empleado
+    template_name = "personas/delete.html"
+    
+    #se necesita la redireccion
+    success_url= reverse_lazy('persona_app:success')
+    
+    #aun no eliminar
+
 
 # 5- listar habilidades de un empleado
