@@ -1,5 +1,4 @@
 from django.shortcuts import render
-
 # Create your views here.
 
 
@@ -13,7 +12,8 @@ from django.shortcuts import render
 #importamos ListView
 from django.views.generic import (
     ListView,
-    DetailView
+    DetailView,
+    CreateView
     )
 # importamos el modelo con el que trabajaremos
 from .models import Empleado
@@ -126,12 +126,29 @@ class ListaEmployeeDetailView(DetailView):
     template_name = "personas/detail_empleado.html"
     model = Empleado
     
+    # si  quisieramos enviar algo extra podemos hacer lo siguiente
 
     
-        
-        
-       
+#internamente django crea un form y necesita que le digitemos estas variables para realizarlo 
+class EmpleadoCreateView(CreateView):
+    #1. el modelo
+    model = Empleado
+    #2. el template con el que trabajaremos
+    template_name = "personas/add.html"
     
+    #3. los campos
+    #es necesario añadir el siguiente campo para esta vista y este lo asiciamos con los nombres de los campos de del modelo
+    # fields=['firts_name','last_name','job','departamento_fk']
+    #con esto podemos traernos todos los campos del modelo sin escribir lo de arriba
+    fields=('__all__')
+    
+    # 4.
+    # EN EL METODO POST, Si utilizamos el la vista CreateView es importante indicar cual sera la paginaredirect 
+ 
+    
+    success_url= '.'
+    
+
     
 
 # 5- listar habilidades de un empleado

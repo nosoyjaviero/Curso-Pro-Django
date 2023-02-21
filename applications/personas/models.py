@@ -35,4 +35,4 @@ class Empleado(models.Model):
     habilidad= models.ManyToManyField(Habilidades)
     
     def __str__(self):
-     return str(self.id) +' - '+self.firts_name +' - '+self.last_name +' - '+self.job +' - '+str(self.departamento_fk)
+     return str(self.id) +' - '+self.firts_name +' - '+self.last_name +' - '+self.job +'- '+str(self.departamento_fk)

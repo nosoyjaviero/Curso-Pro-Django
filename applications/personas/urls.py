@@ -21,7 +21,12 @@ urlpatterns = [
     
     #añadimos la url
     # <pk> django recoge la variable pk automaticamente
-    path('listaDetalle/<pk>', views.ListaEmployeeDetailView.as_view())
+    path('listaDetalle/<pk>', views.ListaEmployeeDetailView.as_view()),
+    
+    #añadimos la url
+    path('add-empleado/', views.EmpleadoCreateView.as_view()),
+   
+    
     
 ]
     
