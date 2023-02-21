@@ -12,6 +12,13 @@ class PruebaForm(forms.ModelForm):
         #otra vez fields
         #aqui le indicamos que atributos del modelos queremos convertirlo en formulario para que se muestre en el html
         fields = ('__all__')
+        widgets = {
+            'titulo': forms.TextInput(
+                attrs={
+                    'placeholder': 'Ingrese texto aqui'
+                }
+            )
+        }
     
     # clean esobligatorio y despues de _ el atributo a validar
     def clean_cantidad(self):
@@ -22,3 +29,4 @@ class PruebaForm(forms.ModelForm):
             #si no cumple salte  este error
             raise forms.ValidationError("Ingrese un mayor numero a 10")
         return cantidad
+    
