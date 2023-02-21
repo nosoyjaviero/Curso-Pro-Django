@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.urls import reverse
 # Create your views here.
 
 
@@ -249,7 +250,45 @@ class EmpleadoDeleteView(DeleteView):
     #se necesita la redireccion
     success_url= reverse_lazy('persona_app:success')
     
-    #aun no eliminar
+    
+    # def delete(self, request, *args, **kwargs):  
+        
+        
+    #     print("*******SELF OBJECT**********")
+    #     print(self)
+        
+    #     print("*******request OBJECT**********")
+    #     print(request)
+        
+    #     print("*******args OBJECT**********")
+    #     print(args)
+        
+    #     print("*******kwargs OBJECT**********")
+    #     print(kwargs)  
+    #     self.object = self.get_object()
+    #     success_url = self.get_success_url()
+    #     self.object.delete()
+    #     return super(EmpleadoDeleteView, self).delete(
+    #         request, *args, **kwargs)
+    
+    # def delete(self, request, *args, **kwargs):
+    #     #especificado en la documentacion de django
+        
+        
+    #     self.object= self.get_object()
+    #     print("*******SELF OBJECT**********")
+    #     print(self.object)
+        
+        
+    #     # success_url= self.get_success_url()
+    #     success_url= reverse('persona_app:success')
+    #     print("*******success_url**********")
+    #     print(success_url)
+        
+    #     self.object.delete()
+    #     #especificado en la documentacion de django
+        
+    #     return HttpResponseRedirect(success_url)
 
-
+    
 # 5- listar habilidades de un empleado
