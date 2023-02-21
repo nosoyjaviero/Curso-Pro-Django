@@ -166,6 +166,10 @@ class EmpleadoCreateView(CreateView):
     #nombreDelAPP_name:url name especifica
     success_url= reverse_lazy('persona_app:success')
     
+    def form_valid(self, form):
+       
+        
+        return super(EmpleadoCreateView ,self ).form_valid(form)
 
 #es la vista mas generica y solo se hace para hacer transicion de una pagina a otra
 class EmpleadoSucessView(TemplateView):
