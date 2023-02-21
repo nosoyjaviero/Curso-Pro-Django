@@ -167,7 +167,14 @@ class EmpleadoCreateView(CreateView):
     success_url= reverse_lazy('persona_app:success')
     
     def form_valid(self, form):
-       
+        
+        # aqui guardamos los valores del html
+        empleado=form.save()
+        #lo rellenamos
+        empleado.full_name= f'{empleado.firts_name} {empleado.last_name}'
+        # y finalmente lo gardamos
+        empleado.save()
+        
         
         return super(EmpleadoCreateView ,self ).form_valid(form)
 
