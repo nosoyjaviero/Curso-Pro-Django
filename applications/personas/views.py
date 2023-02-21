@@ -168,8 +168,9 @@ class EmpleadoCreateView(CreateView):
     
     def form_valid(self, form):
         
-        # aqui guardamos los valores del html
-        empleado=form.save()
+        # aqui guardamos los valores del html 
+        #nos es recomendable hacer un doble guardado asi que        
+        empleado=form.save(commit=False)
         #lo rellenamos
         empleado.full_name= f'{empleado.firts_name} {empleado.last_name}'
         # y finalmente lo gardamos
