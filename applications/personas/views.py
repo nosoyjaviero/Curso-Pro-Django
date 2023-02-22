@@ -26,6 +26,10 @@ from .models import Empleado
 #le indicamos que tipo de lista generica estaremos trabajando
 
 
+class InicioView(TemplateView):
+    """ vista que carga la pagina de inicio"""
+    template_name= 'inicio.html'
+
 class ListAllEmpleados(ListView):
     #debemos decirle de primero que template vamos a trabajar
     template_name= 'personas/list_all.html'

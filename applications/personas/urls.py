@@ -8,6 +8,8 @@ from . import views
 app_name= 'persona_app'
 
 urlpatterns = [
+    path( '', views.InicioView.as_view(), name='inicio' ),
+    
     # mandar a llamar al archivo vistas
     path('listar-todo-empleados/', views.ListAllEmpleados.as_view()),
     #anadimos la url
