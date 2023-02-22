@@ -6,8 +6,20 @@ from django.views.generic.edit import FormView
 # Create your views here.
 
 
-class NewDepartamientoView(FormView):
-    pass
+# Importo el Formulario
+from .forms import NewDepartamentoForm
 
+class NewDepartamientoView(FormView):
+    # indicamento con que archivo estaremos trabajndo
+    template_name='departamento/new_departamento.html'
+    #le indicamos con que form estaremos trabajando
+    form_class= NewDepartamentoForm  
+    
+    #a donde la redigiremos 
+    success_url='/'
+
+    def form_valid(self, form):
+        print('**********estamos en form valid**************')    
+        return super(NewDepartamientoView, self).form_valid(form)
 
 

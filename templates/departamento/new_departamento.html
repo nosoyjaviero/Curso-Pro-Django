@@ -1,0 +1,16 @@
+<h1>Registrar Nuevo departamento</h1> 
+
+<form action="" method="post"> {% csrf_token %}
+    {% comment %} especificamos a cual variable de form queremos acceder, aqui lo divideremos en dos por que queremos separar las partes a convenenciia como lo muestra el requerimiento {% endcomment %}
+    <h3>Datos Empleado</h3>
+    
+    <p>{{form.nombre}}</p>
+    <p>{{form.apellido}}</p>
+
+    <h3>Datos Departamento</h3>
+
+    <p>{{form.departamento}}</p>
+    <p>{{form.shortname}}</p>
+
+<button type="submit">Guardar</button>
+</form>
