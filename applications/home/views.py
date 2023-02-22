@@ -62,7 +62,13 @@ class PruebaCreateView(CreateView):
 class ResumenFoundationView(TemplateView):
     template_name= 'home/resume_foundation.html'
 
-        
+class Home1View(TemplateView):
+    template_name= 'home/home1.html'
+class Home2View(TemplateView):
+    template_name= 'home/home2.html'
+class Home3View(TemplateView):
+    template_name= 'home/home3.html'
+  
     
          
     

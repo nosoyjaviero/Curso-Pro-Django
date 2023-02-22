@@ -11,4 +11,7 @@ urlpatterns = [
     path('lista-prueba/', views.Lista_Prueba.as_view()),
     path('add/', views.PruebaCreateView.as_view(), name='prueba_add'),
     path('resumen/', views.ResumenFoundationView.as_view() ),
+    path('home1/', views.Home1View.as_view() ),
+    path('home2/', views.Home2View.as_view() ),
+    path('home3/', views.Home3View.as_view() ),
 ]
