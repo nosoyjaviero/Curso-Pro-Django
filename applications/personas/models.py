@@ -35,6 +35,7 @@ class Empleado(models.Model):
                                 blank=True, 
                                  )
     job = models.CharField('Trabajo', max_length=50,choices=JOB_CHOISES)
+    #aqui
     departamento_fk = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='empleado', blank=True ,null=True )
     habilidad= models.ManyToManyField(Habilidades)

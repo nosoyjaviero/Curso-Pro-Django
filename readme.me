@@ -141,3 +141,32 @@ Ahora para aadir los atributos de un html en los formularios hacemos lo siguient
 
 Nos piden un nuevo requerimiento que podremos apreciar en la carpeta de archivos
 y consta de registrar un departamento y al menos debe haber un empleado en ese departamento por lo tanto se necesita al mismo tiempo registrar un empleado a cargo 
+
+
+Cargar css en html- tutorial 
+Creamos una carpeta llamada static en la riz de nuestro proyecto
+
+luego, hay que configurar   empleado.settings.local.py 
+dejamos estas variables de esta manera
+STATIC_URL = '/static/'
+STATICFILES_DIRS =[BASE_DIR.child('STATIC')]
+con esto septiamos  nuestra carpeta de archivos estaticos
+
+creamos nuestro archivo html en templates (Yo aqui ya lo tenia creado)
+Nuestro css en la carpeta ./static/ llamado styles.css
+vamos a nuestro archivo html y lo escribimos EL CODIGO HTML a nuestra manera
+
+entonces hay que decirle al template html que cargue nuestros archivos estaticos 
+
+en la primera linea del archivo html escribimos 
+{% load staticfiles  %}
+{% load static %} 
+
+y en la linea del html link rel="stylesheet" le colocamos en href
+<link rel="stylesheet" href="{% static 'prueba.css' %}">
+con esto accede a los archivos staticos y busca 'prueba.css' 
+
+Recordar que los archivos binarios, css, y js son archivos estaticos, no cambian.
+
+en el archivo css escribimos nuestro codigo css
+

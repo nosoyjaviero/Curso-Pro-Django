@@ -1,3 +1,11 @@
+{% comment %} se supone que funciona con esto, pero solo funciono con el que esta descomentado {% endcomment %}
+{% comment %} {% load staticfiles  %}
+{% load static %}  {% endcomment %} 
+
+{% comment %} a;adimos esto {% endcomment %}
+{% load static %}
+
+
 {% comment %} archivo html {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,8 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+{% comment %} en el href le indicamos que acceda a static y busque el archivo prueba.css denntro de esa carpeta  {% endcomment %}
+    <link rel="stylesheet" href="{% static 'prueba.css' %}">
 </head>
 <body>
-    <h1>Hola mundo</h1>
+    <h1 class="ejemplo1" >Hola mundo</h1>
+    <h1 class="ejemplo2" >Hola mundo2</h1>
 </body>
 </html>
