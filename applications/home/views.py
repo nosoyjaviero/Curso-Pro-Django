@@ -59,7 +59,9 @@ class PruebaCreateView(CreateView):
     
     success_url='/'
      
-        
+class ResumenFoundationView(TemplateView):
+    template_name= 'home/resume_foundation.html'
+
         
     
          
