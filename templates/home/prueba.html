@@ -15,10 +15,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 {% comment %} en el href le indicamos que acceda a static y busque el archivo prueba.css denntro de esa carpeta  {% endcomment %}
-    <link rel="stylesheet" href="{% static 'css/prueba.css' %}">
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
 </head>
 <body>
     <h1 class="ejemplo1" >Hola mundo</h1>
     <h1 class="ejemplo2" >Hola mundo2</h1>
+
+    <a href="about.html" class="button">Learn More</a>
+<a href="#features" class="button">View All Features</a>
+
+<!-- Buttons (actions) Con esto probamos que funciona --> 
+<button class="submit success button">Save</button>
+<button type="button" class="alert button">Delete</button>
+
 </body>
 </html>
