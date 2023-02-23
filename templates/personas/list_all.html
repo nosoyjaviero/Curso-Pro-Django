@@ -4,7 +4,11 @@
 <!-- Es necesario -->
 {% block content %} 
     
-
+<!--Inclui la navegacion en una pagina distinta
+    IMPORTANTE
+    Esta debe ir dentro de un bloque content 
+-->
+{% include 'includes/header.html' %}
     
 <h1>Lista de personas</h1>
 {% comment %} podemos acceder de esta manera {% endcomment %}
