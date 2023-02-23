@@ -80,9 +80,10 @@
               {% endfor %}              
               
 
-
-              
+<!--Si no existe pagina Siguiente no la considere-->
+              {% if page_obj.has_next %}
               <li class="pagination-next"><a href="?page={{page_obj.next_page_number}}" aria-label="Page 2">Siguiente</a></li>
+              {% endif %}
             </ul>
           </nav>
           {% endif %}
