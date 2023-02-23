@@ -38,13 +38,10 @@ class ListAllEmpleados(ListView):
     #digitamos esto, entonces si vamos a la url de este metodo, notaremos que solo mostrara 4 resultados pero si digitamos esto en el navegador
     # http://127.0.0.1:8000/listar-todo-empleados/?page=2    
     #notaremos que nos mostrara nuevo resultados
-    paginate_by=4
+    # paginate_by=4
     #tambien podemos ordenarlos en este caso lo hare por nombre pero tambien se puede por otra
     ordering='firts_name'
     # ya no sera necesario el modelo
-    
-    
-    context_object_name='lista'
     
     
     def get_queryset(self):
@@ -55,14 +52,28 @@ class ListAllEmpleados(ListView):
         #Get le indicamos atraves de cual metodo
         #get('kword','') especificamente por esto
         
-        palabra_clave= self.request.GET.get('kword','') #el id y el name  en el html debe ser igual a esto 
+        #en primera instacia cuando entramos a la vista, esta palabra clave es un vacio 
+        
+        palabra_clave= self.request.GET.get("kword", '') #el id y el name  en el html debe ser igual a esto 
         #imprimimos la palabra buscada en la terminal
         # ya no hacemos la impresion en terminal 
         
         
         # el return de este resultado lo obtendra el html como respuesta atraves de context_object_name='empleado'
         lista= Empleado.objects.filter(
-            firts_name=palabra_clave)
+            #primero necesitamos especificar que queremos filtrar de nuestra base de datos en nuestroo 
+            #en este caso queremos filtrar full name
+            
+            # supongamos que queremos buscar lo siguiente: #jorge
+            
+            # si yo escribo: jo 
+            # icontains busca los posibles resultados           
+             
+            
+            firts_name__icontains=palabra_clave
+        )
+        
+        
         return lista
 
 # 2-Listar todos los empleados que pertenecen a un area en la empresa
@@ -86,6 +97,7 @@ class ListByAreaEmployes(ListView):
         
         lista= Empleado.objects.filter(
             departamento_fk__short_name=area)
+        
         return lista
     
     
@@ -155,6 +167,10 @@ class ListaEmployeeDetailView(DetailView):
     model = Empleado
     
     # si  quisieramos enviar algo extra podemos hacer lo siguiente
+    def get_context_data(self, **kwargs) :
+        context = super(ListaEmployeeDetailView,self).get_context_data(**kwargs)
+        context['titulo']='Empleado del mes'
+        return context
 
     
 #internamente django crea un form y necesita que le digitemos estas variables para realizarlo 
