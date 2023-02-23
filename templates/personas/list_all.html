@@ -27,31 +27,23 @@
             <table>
                 <thead>
                   <tr>
-                    <th width="200">Table Header</th>
-                    <th>Table Header</th>
-                    <th width="150">Table Header</th>
-                    <th width="150">Table Header</th>
+                    <th width="200">ID</th>
+                    <th width="200">Nombres</th>
+                    <th width="200">Apellidos</th>
+                    <th width="200">Departamentos</th>
+                    <th width="200">Accion</th>
                   </tr>
                 </thead>
                 <tbody>
+                    {% for e in object_list %}
                   <tr>
-                    <td>Content Goes Here</td>
-                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                    <td>Content Goes Here</td>
-                    <td>Content Goes Here</td>
+                    <td>{{e.id}}</td>
+                    <td>{{e.firts_name}}</td>
+                    <td>{{e.last_name}}</td>
+                    <td>{{e.departamento_fk}}</td>                    
                   </tr>
-                  <tr>
-                    <td>Content Goes Here</td>
-                    <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                    <td>Content Goes Here</td>
-                    <td>Content Goes Here</td>
-                  </tr>
-                  <tr>
-                    <td>Content Goes Here</td>
-                    <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-                    <td>Content Goes Here</td>
-                    <td>Content Goes Here</td>
-                  </tr>
+                  {% endfor %}
+                  
                 </tbody>
               </table>
 
@@ -65,11 +57,11 @@
             
             {% comment %} {{lista}} {% endcomment %}
             {% comment %} {{object_list}} {% endcomment %}
-            {% for e in object_list %}
+            
             <ul>
                 <li>{{e}}</li>
             </ul>
-            {% endfor %}
+            
             </ul>
 
         </div>
