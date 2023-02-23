@@ -68,7 +68,10 @@
               <!--Si tiene elementos atras muestra esto-->
               {% if page_obj.has_previous %}
 
-              <li class="pagination-previous disabled">Atras</li>
+              <li class="pagination-previous disabled">
+                
+                <a href="?page={{page_obj.previous_page_number}}" aria-label="Page 2">Atras</a>
+              </li>
 
               {% endif %}
               <!--Con esto de aca obtengo el numero de paginas que tiene mi paginacion-->
