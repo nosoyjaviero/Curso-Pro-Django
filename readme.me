@@ -220,3 +220,12 @@ https://get.foundation/sites/docs/callout.html
 Es Necesario escribir el codigo que esta en list_all.html dentro de un block por que si django no lo toma en cuenta por temas de herencia
 
 Para este caso usar web devoloper y ver los modelos cajas de cada uno de los elementos del html 
+
+#ahora queremos que el boton de buscaar nos de la opcion de ver todos los detalles del elemento digitado
+
+para eso seleccionamos el def get_queryset(self): de la vista ListEmployeeByKword en personas y lo pegamos en la vista que estamos trabajando
+el id y el name  de la caja de texto en el html debe ser igual a que pondremos en  self.request.GET.get('kword','') en la funcion def get_queryset(self):
+
+para poder realizar todo esto debe esta dentro de un formulario
+
+Al cargar la vista no muestra ninguna lista 

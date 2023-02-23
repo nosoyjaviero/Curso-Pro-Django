@@ -41,10 +41,29 @@ class ListAllEmpleados(ListView):
     paginate_by=4
     #tambien podemos ordenarlos en este caso lo hare por nombre pero tambien se puede por otra
     ordering='firts_name'
-    model= Empleado
+    # ya no sera necesario el modelo
     
     
     context_object_name='lista'
+    
+    
+    def get_queryset(self):
+        # print ('****************')
+        #cuando se da el boton de buscar, el servidor recive atraves de una solicitud request, EN esta solicitud viene incluida una variable llamada kword a esta la obtenemos por aca de esta manera
+        # self nos llamamos a si mismos
+        #request Llamamos a la solicitud request 
+        #Get le indicamos atraves de cual metodo
+        #get('kword','') especificamente por esto
+        
+        palabra_clave= self.request.GET.get('kword','') #el id y el name  en el html debe ser igual a esto 
+        #imprimimos la palabra buscada en la terminal
+        # ya no hacemos la impresion en terminal 
+        
+        
+        # el return de este resultado lo obtendra el html como respuesta atraves de context_object_name='empleado'
+        lista= Empleado.objects.filter(
+            firts_name=palabra_clave)
+        return lista
 
 # 2-Listar todos los empleados que pertenecen a un area en la empresa
 
