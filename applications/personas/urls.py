@@ -5,13 +5,16 @@ from django.urls import path
 #siempre debemos llamar a nuestras vistas
 from . import views 
 #declaramos el nombre de nuestro app_name par acceder a nuestro names
+# <!--'app_name: '-->
 app_name= 'persona_app'
 
 urlpatterns = [
     path( '', views.InicioView.as_view(), name='inicio' ),
     
     # mandar a llamar al archivo vistas
-    path('listar-todo-empleados/', views.ListAllEmpleados.as_view()),
+    # le colocamos su name
+    # <!--name--> 
+    path('listar-todo-empleados/', views.ListAllEmpleados.as_view(), name='empleado_all'),
     #anadimos la url
     
     #si declaro esta variable <shortname>, puedo capturarla dentro de esta funcion con kwarg(')

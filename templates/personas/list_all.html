@@ -1,5 +1,13 @@
+<!-- Herencia de todo el cuerpo html-->
+{% extends 'base.html' %}
+
+<!-- Es necesario -->
+{% block content %} 
+    
+
+    
 <h1>Lista de personas</h1>
-podemos acceder de esta manera
+{% comment %} podemos acceder de esta manera {% endcomment %}
 
 {% comment %} {{lista}} {% endcomment %}
 {% comment %} {{object_list}} {% endcomment %}
@@ -8,3 +16,5 @@ podemos acceder de esta manera
     <li>{{e}}</li>
 </ul>
 {% endfor %}
+
+{% endblock content %}
