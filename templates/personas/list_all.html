@@ -73,7 +73,7 @@
               {% endif %}
               <!--Con esto de aca obtengo el numero de paginas que tiene mi paginacion-->
               {% for pagina in paginator.page_range %}
-              <li><a href="#" aria-label="Page 2">{{pagina}}</a></li>
+              <li><a href="?page={{pagina}}" aria-label="Page 2">{{pagina}}</a></li>
               {% endfor %}              
               
 
