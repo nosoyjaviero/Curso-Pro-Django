@@ -10,15 +10,43 @@
 -->
 {% include 'includes/header.html' %}
     
-<h1>Lista de personas</h1>
-{% comment %} podemos acceder de esta manera {% endcomment %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Lista Empleados</h1>
+        <div class="cell grid-x grid-margin-x">
+            <div class="cell large-7">
+                <input type="text" name="" id="" placeholder="Buscar empleado">
+            </div>
+                <!--button de foundation -->
+            <div class="cell large-2">
+                    <button class="submit success button">Buscar</button>
+            </div>            
+        </div>
+        <div class="cell ">
 
-{% comment %} {{lista}} {% endcomment %}
-{% comment %} {{object_list}} {% endcomment %}
-{% for e in object_list %}
-<ul>
-    <li>{{e}}</li>
-</ul>
-{% endfor %}
+            <h1>Lista de todos los empleados</h1>
+
+            <ul>
+            {% comment %} podemos acceder de esta manera {% endcomment %}
+            
+            {% comment %} {{lista}} {% endcomment %}
+            {% comment %} {{object_list}} {% endcomment %}
+            {% for e in object_list %}
+            <ul>
+                <li>{{e}}</li>
+            </ul>
+            {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+
+
+
+    
+    
+</div>
+
+
 
 {% endblock content %}
