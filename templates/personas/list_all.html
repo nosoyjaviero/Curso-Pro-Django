@@ -71,11 +71,14 @@
               <li class="pagination-previous disabled">Atras</li>
 
               {% endif %}
-                
+              <!--Con esto de aca obtengo el numero de paginas que tiene mi paginacion-->
+              {% for pagina in paginator.page_range %}
+              <li><a href="#" aria-label="Page 2">{{pagina}}</a></li>
+              {% endfor %}              
               
 
 
-              <li><a href="#" aria-label="Page 2">2</a></li>
+              
               <li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
             </ul>
           </nav>
