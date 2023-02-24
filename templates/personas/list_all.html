@@ -76,13 +76,32 @@
               {% endif %}
               <!--Con esto de aca obtengo el numero de paginas que tiene mi paginacion-->
               {% for pagina in paginator.page_range %}
-              <li><a href="?page={{pagina}}" aria-label="Page 2">{{pagina}}</a></li>
+
+               {% if pagina %}
+                  {% if  pagina == page_obj.number %}    
+                  {% comment %} Si el numero de pagina actual es igual a uno de los botones pintados en pantalla hagale hover de color azul a ese boton en especifico  {% endcomment %}
+                  <li class="current"><span class="show-for-sr">You're on page</span>{{pagina}}</li>                 
+                  {% else %}
+                  {% comment %} Este codigo lo que hace es se pinten todas las botones en navegacion de la paginacion  {% endcomment %}
+                  <li>
+                    <a href="?page={{pagina}}" aria-label="Page 2">{{pagina}}</a>
+                  </li>
+                  {% endif %}
+                {% else %}
+                
+                {% endif %} 
+                
+
+             
+
               {% endfor %}              
               
 
 <!--Si no existe pagina Siguiente no la considere-->
               {% if page_obj.has_next %}
-              <li class="pagination-next"><a href="?page={{page_obj.next_page_number}}" aria-label="Page 2">Siguiente</a></li>
+              <li class="pagination-next">
+                <a href="?page={{page_obj.next_page_number}}">Siguiente</a>
+              </li>
               {% endif %}
             </ul>
           </nav>
