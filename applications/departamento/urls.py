@@ -4,7 +4,7 @@ from django.urls import path
 #para llamar a nuestra vista debemos importar a la vista
 from . import views
 
-
+app_name= 'app_departamento'
 urlpatterns = [
     # path('departamento/', ),
     path('new-departamento/', views.NewDepartamientoView.as_view(), name='nuevo_departamento'),

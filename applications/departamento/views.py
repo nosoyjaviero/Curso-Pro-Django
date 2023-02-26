@@ -19,7 +19,7 @@ from .forms import NewDepartamentoForm
 class DepartamentoListView(ListView):
     template_name='departamento/lista.html'
     model = Departamento
-    context_object_name= 'departamento'
+    context_object_name= 'departamentos'
     
     
 
@@ -68,5 +68,6 @@ class NewDepartamientoView(FormView):
         
          
         return super(NewDepartamientoView, self).form_valid(form)
+
 
 
