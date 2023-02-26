@@ -23,13 +23,13 @@
                             <td>
                                 {% comment %} Se le envia un short_name como parametro. 
                                 LEER PATH EN EN PERSONA SI ESTOY CONFUNDIDO  {% endcomment %}
-                                <a href="{% url 'persona_app:empleado_area' departamento.short_name %}" class="button warning">Ver empleado</a>
+                                <a href="{% url 'persona_app:empleado_area' departamento.short_name %}" class="button warning">Ver empleados</a>
                             </td>
                            
                          </tr>
                          {% endfor %}
                     </tbody>
-                </table>
+                </table> 
             </div>
         </div>
     </div>
