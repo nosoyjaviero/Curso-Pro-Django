@@ -89,6 +89,7 @@ class ListByAreaEmployes(ListView):
     
     #de una forma mas profesional aprendemos hacemos lo mismo pero de una manera mas profesional 
     
+    context_object_name='empleados'
     def get_queryset(self):
         
         #Podemos capturar una variable que venga en una url atraves del siguiente paramento           

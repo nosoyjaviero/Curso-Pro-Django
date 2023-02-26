@@ -2,21 +2,22 @@
 
 
 {% block title %}
-    Areas
+    Lista empleados por departamento
 {% endblock title %}
     
 
 {% block content %}
 
-{% include 'includes/header.html' %}    
-<h1>Lista de empleados por area</h1>
+    {% include 'includes/header.html' %}    
+    <h1>Lista de empleados por area</h1>
 
 
-{% for object in object_list %}
-<ul>
-    <li>{{object}}</li>
-</ul>
+    {% for empleado in empleados %}
+    <ul>
+        <li>{{empleado}}</li>
+    </ul>
 
-{% endfor %} 
+    {% endfor %} 
+    
 {% endblock content %}
     
