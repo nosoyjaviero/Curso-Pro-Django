@@ -8,4 +8,5 @@ from . import views
 urlpatterns = [
     # path('departamento/', ),
     path('new-departamento/', views.NewDepartamientoView.as_view(), name='nuevo_departamento'),
+    path('departamento-lista/', views.DepartamentoListView.as_view(), name='list_departamento'),
 ]

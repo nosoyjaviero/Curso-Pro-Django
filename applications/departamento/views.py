@@ -11,10 +11,17 @@ from applications.personas.models import Empleado
 
 from .models import Departamento
 
-
+from django.views.generic import ListView
 
 # Importo el Formulario
 from .forms import NewDepartamentoForm
+
+class DepartamentoListView(ListView):
+    template_name='departamento/lista.html'
+    model = Departamento
+    context_object_name= 'departamento'
+    
+    
 
 class NewDepartamientoView(FormView):
     # indicamento con que archivo estaremos trabajndo
