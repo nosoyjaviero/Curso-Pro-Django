@@ -1,6 +1,37 @@
-<h1>Actualizar</h1>
+{% extends 'base.html' %}
 
-<form method="post"> {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Actualizar</button>
-</form>
+
+{% block title %}
+    Actualizar empleado
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1>Actualizar</h1>
+        <div class="cell">
+            <form method="post"> {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+        
+    </div>
+
+</div>
+
+
+{% endblock content %}
+    
+    
+
+<h1>Actualizar</h1>
+    <form method="post"> {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Actualizar</button>
+    </form>
