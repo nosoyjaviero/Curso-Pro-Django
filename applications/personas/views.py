@@ -137,6 +137,7 @@ class ListaEmpleadosAdmin(ListView):
     model= Empleado
     
     context_object_name='empleado'
+    paginate_by=10
         
 #estaremos trabajando con una relacion de ManyToMany 
 class ListaHabilidadesEmpleado(ListView):
