@@ -129,6 +129,14 @@ class ListEmployeeByKword(ListView):
         lista= Empleado.objects.filter(
             firts_name=palabra_clave)
         return lista
+
+class ListaEmpleadosAdmin(ListView):
+    template_name= 'personas/lista_empleado.html'
+    
+    # al no tener el query set debe tener obligatoriamente un modelo    
+    model= Empleado
+    
+    context_object_name='empleado'
         
 #estaremos trabajando con una relacion de ManyToMany 
 class ListaHabilidadesEmpleado(ListView):
