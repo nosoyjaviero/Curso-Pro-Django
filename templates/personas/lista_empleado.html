@@ -35,7 +35,7 @@
                     <td>{{e.departamento_fk}}</td>  
                     <td>
                       <a class="button sucess" href="{% url 'persona_app:empleados-update' e.id%}">Editar</a>
-                      <a class="button alert" href="">Eliminar</a>
+                      <a class="button alert" href="{% url 'persona_app:delete' e.id%}">Eliminar</a>
                        
                     </td>                  
                   </tr>
