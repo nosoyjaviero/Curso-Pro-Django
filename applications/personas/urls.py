@@ -40,9 +40,6 @@ urlpatterns = [
     #añadimos la url se necesita acceder a uno en especifico por eso el pk 
     
     path('eliminar-empleado/<pk>', views.EmpleadoDeleteView.as_view(), name='delete'),
-    path('empleado-admin/', views.ListaEmpleadosAdmin.as_view(), name= 'empleados-admin' ),
-    path('empleado-update/<pk>', views.EmpleadoUpdateView.as_view(), name= 'empleados-update' ),
-    
     
 ]
     

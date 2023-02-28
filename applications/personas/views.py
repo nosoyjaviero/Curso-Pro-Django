@@ -139,6 +139,15 @@ class ListaEmpleadosAdmin(ListView):
     context_object_name='empleado'
     paginate_by=10
         
+
+class ListaEmpleadosAdmin(ListView):
+    template_name= 'personas/lista_empleado.html'
+    
+    # al no tener el query set debe tener obligatoriamente un modelo    
+    model= Empleado
+    
+    context_object_name='empleado'
+        
 #estaremos trabajando con una relacion de ManyToMany 
 class ListaHabilidadesEmpleado(ListView):
     #declarar el template con el vamos a trabajar

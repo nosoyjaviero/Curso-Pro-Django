@@ -13,7 +13,16 @@
 <div class="grid-container">
     <div class="grid-x">
         <h1 class="cell">Administrar Personas</h1>
-        
+        <form method='GET' class="cell grid-x grid-margin-x"> {% csrf_token %}
+            <div class="cell large-7">
+                <!--colocamos kword aqui en id y name -->
+                <input type="text" id="kword" name="kword" placeholder="Buscar empleado"> 
+            </div>
+                <!--button de foundation -->
+            <div class="cell large-2">
+                    <button type="submit" class="success button">Buscar</button>
+            </div>            
+        </form>
         <div class="cell ">
 
             <table>
@@ -34,8 +43,8 @@
                     <td>{{e.last_name}}</td>
                     <td>{{e.departamento_fk}}</td>  
                     <td>
-                      <a class="button sucess" href="{% url 'persona_app:empleados-update' e.id%}">Editar</a>
-                      <a class="button alert" href="{% url 'persona_app:delete' e.id%}">Eliminar</a>
+                      <a class="button warning" href="{% url 'persona_app:empleado_detail' e.id %}">Editar</a>
+                      <a class="button warning" href="{% url 'persona_app:empleado_detail' e.id %}">Eliminar</a>
                        
                     </td>                  
                   </tr>
