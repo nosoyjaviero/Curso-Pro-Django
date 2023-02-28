@@ -243,13 +243,6 @@ class EmpleadoUpdateView(UpdateView):
     template_name = "personas/update.html"
     model = Empleado
     
-    
-    #Le indicamos los campos que se mostraran en el form manuelmente y como los seleccionaremos de models
-       
-    #Puede ser este para traer todos los campos
-    # fields=('__all__')
-    
-    #o este en especifico
     fields=['firts_name',
             'last_name',
             'job',
@@ -257,40 +250,26 @@ class EmpleadoUpdateView(UpdateView):
             'avatar',
             'habilidad'
             ]
-    #es necesario redireccionar o saltara un error
-    success_url= reverse_lazy('persona_app:success')
     
+    success_url= reverse_lazy('persona_app:empleados-admin')
     
-    
-   
-    #form_valid lo que hace es validar los datos del form del html y luego se ejecuta 
     def form_valid(self, form):     
        
              
         empleado=form.save(commit=False)
-        print('**********METHOD POST**************')
-        print('======================')
         empleado.full_name= f'{empleado.firts_name} {empleado.last_name}'
        
-        empleado.save()
+        empleado.save()       
         
-        
-        return super(EmpleadoCreateView ,self ).form_valid(form)    
+        return super(EmpleadoUpdateView ,self ).form_valid(form)    
     
-    # puede que nosotros necesitemos intersectar los datos antes de que hayamos validado los datos del formulario, y este en caso usamos post :
     def post(self, request, *args, **kwargs):
-        #especificado en la documentacion de django
-        self.object= self.get_object()
         
-        print('**********METHOD POST**************')
-        print('======================')
-        # observemos que datos tiene el argumento request
+        self.object= self.get_object()
         print(request.POST)
-        #request.POST al ser un diccionario podemos acceder aa cada posicion        
         print(request.POST['last_name'])
-        #especificado en la documentacion de django
         return super().post(request, *args, **kwargs)
-    
+
 
 class EmpleadoDeleteView(DeleteView):
     model = Empleado
