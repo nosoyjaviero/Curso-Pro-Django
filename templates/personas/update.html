@@ -15,9 +15,15 @@
     <div class="grid-x">
         <h1>Actualizar</h1>
         <div class="cell">
-            <form method="post"> {% csrf_token %}
-                {{form.as_p}}
-                <button type="submit">Actualizar</button>
+            <form class="grid-x" method="post"> {% csrf_token %}
+
+                <div class="large-6 cell">
+                        <label>Nombres:
+                            {{form.firts_name}}
+                        {% comment %} <input type="text" placeholder=".medium-6.cell"> {% endcomment %}
+                        </label>
+                    </div>
+                <button class="button success" type="submit ">Actualizar</button>
             </form>
         </div>
         
@@ -30,8 +36,8 @@
     
     
 
-<h1>Actualizar</h1>
+{% comment %} <h1>Actualizar</h1>
     <form method="post"> {% csrf_token %}
         {{form.as_p}}
         <button type="submit">Actualizar</button>
-    </form>
+    </form> {% endcomment %}
