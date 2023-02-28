@@ -276,7 +276,7 @@ class EmpleadoDeleteView(DeleteView):
     template_name = "personas/delete.html"
     
     #se necesita la redireccion
-    success_url= reverse_lazy('persona_app:success')
+    success_url= reverse_lazy('persona_app:empleados-admin')
     
     
     # def delete(self, request, *args, **kwargs):  
