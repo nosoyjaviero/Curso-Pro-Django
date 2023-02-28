@@ -1,7 +1,56 @@
+{% extends 'base.html' %}
 
 
-<form method="POST"> {% csrf_token %}
+{% block title %}
+    
+{% endblock title %}
+    
 
-    {{form.as_p}}
-    <button type="submit">Agregar</button>
-</form>
+{% block content %}
+    {% include 'includes/header.html' %}
+<div class="grid-container">
+    <div class="grid-x">
+
+        <h1 class="cell">Agregar Empleado</h1>
+
+        <form method="POST"> {% csrf_token %}
+            <div class="cell">
+                <label for="">
+                      Nombre:
+                    <input type="text" name="" id="">
+                </label>
+            </div>
+
+            <div class="cell">
+                <label for="">
+                    Apellidos:
+                    <input type="text" name="" id="">
+                </label>
+            </div>
+
+            <div class="cell">
+                <label for="">
+                    Departamento:
+                            {% comment %} <input type="text" name="" id=""> {% endcomment %}
+                    {{form.departamento_fk}}
+                </label>
+            </div>
+
+            <div class="cell">
+                <label for="">
+                    Avatar:
+                    {{form.avatar}}
+                </label>
+            </div>
+
+            <div class="cell">
+                    <button type="submit" class="button">Guardar</button>
+            </div>
+           
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
+    
+

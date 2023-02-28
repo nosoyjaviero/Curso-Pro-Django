@@ -31,7 +31,7 @@ urlpatterns = [
     path('listaDetalle/<pk>', views.ListaEmployeeDetailView.as_view(), name='empleado_detail'),
     
     #añadimos la url
-    path('add-empleado/', views.EmpleadoCreateView.as_view()),
+    path('add-empleado/', views.EmpleadoCreateView.as_view(), name="empleado-crear"),
     #aÑadimos name para poder ser accedidela desde las vistas
     
     path('success/', views.EmpleadoSucessView.as_view(), name='success'),

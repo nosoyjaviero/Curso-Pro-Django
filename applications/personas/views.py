@@ -216,7 +216,7 @@ class EmpleadoCreateView(CreateView):
     #una buena practica de lo anterior mencionado es utilizar lo siguiente
     #en los parametros le indicamos la etiqueta name de un url
     #nombreDelAPP_name:url name especifica
-    success_url= reverse_lazy('persona_app:success')
+    success_url= reverse_lazy('persona_app:inicio')
     
     
     #form_valid lo que hace es validar los datos del html y luego se ejecuta 
