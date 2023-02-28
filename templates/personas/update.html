@@ -15,15 +15,51 @@
     <div class="grid-x">
         <h1>Actualizar</h1>
         <div class="cell">
-            <form class="grid-x" method="post"> {% csrf_token %}
+            <form class="grid-x grid-margin-x" method="post"> {% csrf_token %}
 
-                <div class="large-6 cell">
-                        <label>Nombres:
+                    <div class="large-6 cell">
+                        <label>Nombre:
                             {{form.firts_name}}
                         {% comment %} <input type="text" placeholder=".medium-6.cell"> {% endcomment %}
                         </label>
                     </div>
-                <button class="button success" type="submit ">Actualizar</button>
+
+                    <div class="large-6 cell">
+                        <label>Apellido:
+                            {{form.last_name}}                        
+                        </label>
+                    </div>
+
+                    <div class="large-6 cell">
+                        <label>Trabajo:
+                            {{form.job}}                        
+                        </label>
+                    </div>
+
+                    <div class="large-6 cell">
+                        <label>Departamento:
+                            {{form.departamento_fk}}  
+                        </label>
+
+                    </div>
+
+                    {% comment %} <div class="large-6 cell">
+                         </label>
+                        <label>Imagen:
+                            {{form.avatar}}  
+                        </label>
+                    </div>                       {% endcomment %}
+                        
+                    <div class="large-6 cell">
+                        <label>Habilidad:
+                            {{form.habilidad}}                        
+                        </label>                        
+                    </div>
+
+                    <div class="cell">
+                        <button class="button success" type="submit ">Actualizar</button>
+                    </div>
+                
             </form>
         </div>
         
